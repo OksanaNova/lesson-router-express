@@ -3,15 +3,13 @@ const app = express();
 
 
 const postsRoute = require('./routes/Posts');
-app.use('/posts', postsRoute);
-
 const likesRoute = require('./routes/Likes');
-app.use('/likes', likesRoute);
-
 const commentsRoute = require('./routes/Comments');
-app.use('/comments', commentsRoute);
-
 const storiesRoute = require('./routes/Stories');
+
+app.use('/posts', postsRoute);
+app.use('/likes', likesRoute);
+app.use('/comments', commentsRoute);
 app.use('/stories', storiesRoute)
 
 
