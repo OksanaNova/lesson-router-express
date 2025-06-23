@@ -2,6 +2,19 @@ const express = require('express');
 const app = express();
 
 
+const postsRoute = require('./routes/Posts');
+app.use('/posts', postsRoute);
+
+const likesRoute = require('./routes/Likes');
+app.use('/likes', likesRoute);
+
+const commentsRoute = require('./routes/Comments');
+app.use('/comments', commentsRoute);
+
+const storiesRoute = require('./routes/Stories');
+app.use('/stories', storiesRoute)
+
+
 app.listen(4000, () => {
     console.log(`It's working`)
 })
